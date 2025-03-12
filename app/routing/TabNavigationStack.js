@@ -13,12 +13,16 @@ import {appColors} from '../utils/appColors';
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigationStack({isAuth}) {
-   const [routes, setRoutes] = React.useState( [...publicRoutes,...RoutesList ] )
+   const [routes, setRoutes] = React.useState(RoutesList/*   [...publicRoutes,...RoutesList ] */ )
 
   return (
     <NavigationContainer>
       <Tab.Navigator
+      screenOptions={{
+        headerShown:false
+      }}
         tabBarOptions={{
+           
           activeTintColor: appColors.primary,
           inactiveTintColor: appColors.darkGray,
         }}>
